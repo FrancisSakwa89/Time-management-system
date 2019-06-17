@@ -1,0 +1,48 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<!DOCTYPE html>
+ <html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if title %}
+    <title>Time Management - {{title}}</title>
+    {% else %}
+    <title>Time Management</title>
+    {% endif %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type='text/css' href="{% static 'css/index.css' %}">
+    <!-- <link rel="stylesheet" type='text/css' href="{% static 'css/animate.css' %}"> -->
+
+    {% endblock %}
+
+  </head>
+  <body>
+      <style>
+        body{
+          color:black
+            /* background: linear-gradient(to right, #16222a, #3a6073);
+            color: whitesmoke;
+            /* background-image:url('https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80'); */
+        }
+        </style>
+    
+    {% include 'navbar.html' %}
+
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+    {% block scripts %}
+  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      {% bootstrap_javascript %}
+    {% endblock %}
+    
+    <script src="" async defer></script>
+  </body>
+</html>

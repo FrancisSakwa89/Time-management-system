@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-dark">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class=" btn btn-outline-success glyphicon glyphicon-home" href="{% url 'welcome'%}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-outline-success" data-toggle="dropdown" role="button" aria-expanded="true">More Apps</a>
+          <ul class="dropdown-menu" role="menu" style="color:black"><li>              
+          
+
+          </ul>
+          </li>
+      
+          {% if user.is_authenticated %}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-outline-success" data-toggle="dropdown" role="button" aria-expanded="true">Account
+                      <span class="caret"></span>
+                  </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a  href="{% url 'welcome'%}">Home</a>
+              </li>
+              <li>
+                <a href="/accounts/password/change">Change Password</a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+              <li><a class="nav-link" href="/accounts/login">Login</a></li>
+          <li><a class="nav-link" href="/accounts/register">Register</a></li>
+
+            </ul>
+          </li>
+        </ul>
+        {% else %}
+        <li>
+          <a class='btn btn-default' href="/accounts/login">Login</a>
+        </li>
+    </ul>
+  
+        {% endif %}
+        </ul>
+        <form class="form-inline my-2 my-lg-0" role="search" action="">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search businesses" aria-label="Search" name="business">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+    </div>
+  </nav>
+  <br>
+  <br>
